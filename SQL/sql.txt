@@ -1,0 +1,30 @@
+create table register
+(
+name varchar2(30),
+phone_number int,
+email varchar2(30),
+password varchar2(30),
+address varchar2(100)
+);
+select *from register;
+
+create table admin
+(
+admin_id number(5),
+admin_name varchar2(40),
+location varchar2(40),
+address varchar2(100),
+phone_no int,
+price int
+);
+alter table admin add status int;
+
+create sequence admin_admin_id_seq
+start with 1
+increment by 1;
+
+update admin set status=1;
+commit;
+select * from admin;
+select * from register;
+
