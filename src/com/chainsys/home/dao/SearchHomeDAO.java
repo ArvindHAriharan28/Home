@@ -27,7 +27,7 @@ public class SearchHomeDAO {
 			admin.setLocation(resultset.getString("location"));
 			admin.setPrice(resultset.getInt("price"));
 			admin.setPhoneNumber(resultset.getLong("phone_no"));
-			
+
 			list.add(admin);
 
 		}
