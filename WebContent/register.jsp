@@ -63,7 +63,7 @@ form {
 				<tr>
 				<tr align="left">
 					<td style="color: black"><h4>Phone no :</h4></td>
-					<td><input type="number" name="phone" pattern="[6-9]{1}[0-9]{9}"  maxlength="10"  oninvalid="setCustomValidity('Plz enter valid mobile number')"
+					<td><input type="tel" name="phone" pattern="[6-9]{1}[0-9]{9}"  maxlength="10"  oninvalid="setCustomValidity('Plz enter valid mobile number')"
         required></td>
 				</tr>
 				<tr>

@@ -14,15 +14,15 @@ public class SearchHomeDAO {
 		ArrayList<Admin> list = new ArrayList<Admin>();
 
 		Connection connection = ConnectionUtil.getConnection();
-		String sql = "select admin_id,admin_name,address,location,price,phone_no,status from admin where location=? and status=1";
+		String sql = "select id,name,address,location,price,phone_no,status from admin where location=? and status=1";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, location);
 		ResultSet resultset = preparedStatement.executeQuery();
 		Admin admin;
 		while (resultset.next()) {
 			admin = new Admin();
-			admin.setAdminId(resultset.getInt("admin_id"));
-			admin.setAdminName(resultset.getString("admin_name"));
+			admin.setAdminId(resultset.getInt("id"));
+			admin.setAdminName(resultset.getString("name"));
 			admin.setAddress(resultset.getString("address"));
 			admin.setLocation(resultset.getString("location"));
 			admin.setPrice(resultset.getInt("price"));

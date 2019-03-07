@@ -11,7 +11,7 @@ public class AdminDAO {
 	public void addDetails(Admin admin) throws Exception {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
-			String sql = "insert into admin(admin_id,admin_name,location,address,phone_no,price,status) values(admin_admin_id_seq.NEXTVAL,?,?,?,?,?,?)";
+			String sql = "insert into admin(id,name,location,address,phone_no,price,status) values(admin_admin_id_seq.NEXTVAL,?,?,?,?,?,?)";
 			PreparedStatement preparedstatement = connection
 					.prepareStatement(sql);
 			preparedstatement.setString(1, admin.getAdminName());
@@ -47,7 +47,7 @@ public class AdminDAO {
 	public void findbyid(int id) throws Exception {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
-			String sql = "update admin set status =? where admin_id=?";
+			String sql = "update admin set status =? where id=?";
 			PreparedStatement preparedstatement = connection
 					.prepareStatement(sql);
 			preparedstatement.setInt(1, 0);

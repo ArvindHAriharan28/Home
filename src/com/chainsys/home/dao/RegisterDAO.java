@@ -13,7 +13,7 @@ public class RegisterDAO {
 	public void addUser(Register register) throws Exception {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
-			String sql = "insert into register(name,phone_number,email,password,address,security_question,security_answer) values(?,?,?,?,?,?,?)";
+			String sql = "insert into register(id,name,phone_number,email,password,address,security_question,security_answer) values(register_id_seq.NEXTVAL,?,?,?,?,?,?,?)";
 			PreparedStatement preparedstatement = connection
 					.prepareStatement(sql);
 			preparedstatement.setString(1, register.getName());
